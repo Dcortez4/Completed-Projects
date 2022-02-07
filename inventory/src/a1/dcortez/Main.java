@@ -14,12 +14,16 @@ public class Main {
         FoodItems[] foodItems = FoodItems.values();
         Tools[] tools = Tools.values();
         ToolUses[] toolUses = ToolUses.values();
+        Booster[] boosterItems = Booster.values();
+        Clothes[] clothes = Clothes.values();
+        ClothingType [] clothingTypes = ClothingType.values();
+
 
         System.out.print("How many items do you want: ");
         int itemCnt = Integer.parseInt(scan.nextLine());
 
         for(int i=0; i<itemCnt; i++){
-            int type = ran.nextInt(2);
+            int type = ran.nextInt(4);
             switch (type) {
                 case 0 -> {
                     int foodIndex = ran.nextInt(foodItems.length);
@@ -39,6 +43,25 @@ public class Main {
                     String use = toolUses[toolIndex].toString();
                     Tool tempTool = new Tool(toolName, toolPrice, toolQty, use);
                     items.add(tempTool);
+                }
+                case 2 -> {
+                    int boostersIndex = ran.nextInt(boosterItems.length);
+                    String boosterName = boosterItems[boostersIndex].toString();
+                    float boosterPrice= ran.nextFloat(1000);
+                    int boosterQty = ran.nextInt(20);
+                    int boosterUses = ran.nextInt(10);
+                    float bonus = ran.nextFloat(100);
+                    Boosters tempBooster = new Boosters(boosterName, boosterPrice, boosterQty, boosterUses, bonus);
+                    items.add(tempBooster);
+                }
+                case 3 -> {
+                    int clothingIndex = ran.nextInt(clothes.length);
+                    String clothingName = clothes[clothingIndex].toString();
+                    float clothingPrice = ran.nextFloat(500);
+                    int clothingQty = ran.nextInt(10);
+                    String cType = clothingTypes[clothingIndex].toString();
+                    Clothing tempClothing = new Clothing(clothingName,clothingPrice,clothingQty, cType);
+                    items.add(tempClothing);
                 }
             }
         }
