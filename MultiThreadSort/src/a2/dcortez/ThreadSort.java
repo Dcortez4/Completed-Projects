@@ -2,8 +2,6 @@ package a2.dcortez;
 
 import a1.dcortez.Item;
 
-import java.util.Random;
-
 public class ThreadSort extends Thread{
     private Item[] tItems;
 
@@ -11,9 +9,8 @@ public class ThreadSort extends Thread{
         this.tItems = new  Item[upperBounds - lowBounds];
 
         System.arraycopy(items, lowBounds, this.tItems, 0, (upperBounds - lowBounds));
-
-
     }
+
     @Override
     public void run() {
         System.out.println("Thread Started");
@@ -22,12 +19,10 @@ public class ThreadSort extends Thread{
         for(int i=0; i<n; i++){
             for(int j=1; j<n; j++){
                 if(this.tItems[j-1].getPrice() > this.tItems[j].getPrice()) {
-                    tmp = this.tItems[j - 1];
-                    this.tItems[j - 1] = this.tItems[j];
+                    tmp = this.tItems[j-1];
+                    this.tItems[j-1] = this.tItems[j];
                     this.tItems[j] = tmp;
                 }
-
-
             }
         }
         System.out.println("Thread Complete");
