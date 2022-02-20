@@ -2,16 +2,20 @@ package a3.dcortez.contactsapp;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.ListView;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.VBox;
 import org.json.JSONObject;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Objects;
 import java.util.Scanner;
 
 public class ListViewController {
@@ -23,6 +27,12 @@ public class ListViewController {
     @FXML
     TextField txtFirstName, txtLastName, txtPhone;
 
+    @FXML
+    MenuItem btnThemeDefault, btnThemeBlue, btnThemeRed;
+
+    @FXML
+    VBox vboxMain;
+
     ContactComparator comparator = new ContactComparator();
 
     @FXML
@@ -32,6 +42,7 @@ public class ListViewController {
         loadListFromJSON();
         contacts.sort(comparator);
     }
+
     private void loadListFromJSON(){
         try(Scanner scanner = new Scanner(new File("contacts.json"))){
             while(scanner.hasNextLine()){
@@ -87,6 +98,24 @@ public class ListViewController {
             txtPhone.setText(selectedContact.getPhone());
         }
     }
+    @FXML
+    protected void onThemeChange(final ActionEvent event){
+        String defaultCSS = Objects.requireNonNull(getClass().getResource("Default.css")).toString();
+        String blueCSS = Objects.requireNonNull(getClass().getResource("Blue.css")).toString();
+        String redCSS = Objects.requireNonNull(getClass().getResource("Red.css")).toString();
+        vboxMain.getScene().getStylesheets().removeAll(defaultCSS, blueCSS, redCSS);
+
+        Object source = event.getSource();
+        if(event.getSource() == btnThemeDefault) {
+            vboxMain.getScene().getStylesheets().add(defaultCSS);
+        }
+        if(event.getSource() == btnThemeBlue){
+            vboxMain.getScene().getStylesheets().add(blueCSS);
+        }
+        if(event.getSource() == btnThemeRed){
+            vboxMain.getScene().getStylesheets().add(redCSS);
+        }
+    }
 
     @FXML
     protected void onDeleteContact(){
@@ -100,4 +129,6 @@ public class ListViewController {
         newContact.setVisible(vis);
         newContact.setManaged(vis);
     }
+
+
 }
