@@ -1,0 +1,44 @@
+.vbox, .tab-pane{
+    -fx-background-color: #8566FF;
+    -fx-font-family: "Arial";
+}
+.tab{
+    -fx-background-color: #8566FF;
+}
+.tab-pane
+{
+    -fx-tab-min-width:90px;
+}
+
+.tab-pane .tab:selected {
+    -fx-background-color: #78E9FF;
+}
+
+.vbox, .list-view{
+    -fx-background-color: #C2C0FF;
+    -fx-font-family: "Arial";
+}
+
+.list-cell:filled:selected:focused, .list-cell:filled:selected{
+    -fx-background-color: #767EC2;
+    -fx-text-fill: #e3e2e0;
+}
+.list-cell:odd{
+    -fx-background-color: #BBC0FE;
+}
+
+.list-cell:even{
+    -fx-background-color: #A8B2F0;
+}
+
+.hbox, .text-field{
+    -fx-background-color: #ffff;
+    -fx-border-color: #767EC2;
+    -fx-font-family: "Arial";
+}
+.hbox, .button{
+    -fx-background-color: #F97CFF;
+    -fx-border-color: #FF53D2;
+    -fx-font-weight: bold;
+
+}
