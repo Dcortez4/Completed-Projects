@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FBDDE8"
+    android:outlineAmbientShadowColor="#F8F1F1"
     tools:context=".MainActivity">
 
     <EditText
@@ -13,6 +15,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
+        android:background="#FCDDF0"
         android:ems="10"
         android:hint="@string/todo_item"
         android:inputType="textPersonName"
@@ -40,13 +43,20 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
+        android:background="@color/pink"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:tabIconTint="@color/purple_200"
+        app:tabIndicatorColor="#CF08F1"
+        app:tabSelectedTextColor="#F73461"
+        app:tabTextColor="#D205F5">
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="#C63A3A"
+            android:backgroundTint="#984141"
             android:text="@string/home" />
 
         <com.google.android.material.tabs.TabItem
@@ -58,6 +68,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/work" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/travel_list" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/appointments" />
     </com.google.android.material.tabs.TabLayout>
 
     <androidx.recyclerview.widget.RecyclerView
@@ -68,6 +88,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
+        android:background="#F2DBE8"
         app:layout_constraintBottom_toTopOf="@+id/txtTodoItem"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
