@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">CurrencyApp</string>
+    <string name="enter_q">Enter Quantity</string>
+    <string name="convert">Convert</string>
+    <string name="update">Updated:</string>
+    <string name="rate">Rate:</string>
+    <string-array name="currency_types">
+        <item>AUD</item>
+        <item>CAD</item>
+        <item>EUR</item>
+        <item>GBP</item>
+        <item>INR</item>
+        <item>JPY</item>
+        <item>KRW</item>
+        <item>MXN</item>
+        <item>USD</item>
+    </string-array>
+</resources>

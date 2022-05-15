@@ -1,0 +1,4 @@
+{
+  "apikey" : "44ba0afbc9e52e7094705ccef141d90a2f920b59",
+  "currencyURL": "https://api.getgeoapi.com/v2/currency/convert?api_key=%s&from=%s&to=%s&amount=%s&format=json"
+}
